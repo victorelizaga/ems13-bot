@@ -11,6 +11,7 @@ from dotenv import load_dotenv
 load_dotenv()
 TOKEN = os.getenv("DISCORD_TOKEN")
 if not TOKEN:
+    print("TOKEN VALUE:", os.getenv("DISCORD_TOKEN"))
     sys.exit("DISCORD_TOKEN missing")
 
 # ===================== CHANNEL IDS =====================
@@ -361,3 +362,4 @@ scheduler.add_job(auto_clockout, CronTrigger(hour=18, minute=0))
 
 # ===================== RUN =====================
 bot.run(TOKEN)
+
